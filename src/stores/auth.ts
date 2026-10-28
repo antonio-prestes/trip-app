@@ -31,7 +31,6 @@ export const useAuthStore = defineStore('auth', () => {
   const login = async (credentials: LoginCredentials) => {
     loading.value = true
     try {
-      console.log('login', credentials)
       const response = await authService.login(credentials)
       const { access_token: authToken, user: userData } = response.data
 
@@ -58,7 +57,6 @@ export const useAuthStore = defineStore('auth', () => {
   const register = async (credentials: RegisterCredentials) => {
     loading.value = true
     try {
-      console.log('register', credentials)
       const response = await authService.register(credentials)
       const { token: authToken, user: userData } = response.data
 
